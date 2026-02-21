@@ -1,4 +1,4 @@
-mundo_origem = global.mundo_invertido
+mundo_origem = !global.mundo_invertido
 
 if (!mundo_origem)
 {
@@ -7,5 +7,5 @@ if (!mundo_origem)
 }
 else 
 {
-    sprite_index = spr_madeira
+    sprite_index = spr_ponte_grama
 }

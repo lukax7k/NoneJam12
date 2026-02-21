@@ -8,8 +8,8 @@ var _p1 = .85
 var _p2 = .75
 
 draw_sprite(spr_background_ceu, 0, _camx, _camy)
-draw_sprite(spr_background_level1_0, 0, _camx * _p, 512)
-draw_sprite(spr_background_level1_1, 0, _camx * _p1, 532)
-draw_sprite(spr_background_level1_2, 0, _camx * _p2, 552)
+draw_sprite(spr_background_level1_0, 0, _camx * _p, 1280)
+draw_sprite(spr_background_level1_1, 0, _camx * _p1, 1290)
+draw_sprite(spr_background_level1_2, 0, _camx * _p2, 1320)
 
 

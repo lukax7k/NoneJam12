@@ -1,3 +1,3 @@
 montain = layer_get_id("Montanha");
 
-depth = 999
+depth = 10000
