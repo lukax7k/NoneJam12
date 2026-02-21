@@ -2,6 +2,7 @@
 
 velv = 0
 max_velv = 8
+max_velv_esc = 3
 
 velh = 0
 max_velh = 5
@@ -167,11 +168,10 @@ aplica_vel = function()
     
     if (!chao)
     {
-        if (!escada)
-        {
+        
             velv += grav
-        }
-        else if (velv > 0 && escada_topo)
+        
+        if (velv > 0 && escada_topo)
         {
             velv = 0
         }
@@ -237,10 +237,10 @@ aplica_vel_escalando = function()
         // aplicando os inputs na velh
         velh = (right - left) * max_velh;
         
-        // Se eu não estou tocando o chão, aplico a gravidade no velv
+        
         if (place_meeting(x, y , obj_escada)) 
         {
-            velv = (down - jump) * max_velh;
+            velv = (down - jump) * max_velv_esc;
             
         }
         else if (escada_topo)
