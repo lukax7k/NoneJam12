@@ -297,6 +297,7 @@ toma_dano = function(_dano = 1)
     
     if (vida <= 0)
     {
+        global.morreu = true;
         instance_destroy()
     }
 }

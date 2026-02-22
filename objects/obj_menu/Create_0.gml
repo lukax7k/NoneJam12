@@ -5,6 +5,7 @@ image_alpha = 0
 
 menu_ativo = false;
 fim_de_jogo = false;
+in_lobby = false;
 
 option = 1;
 
@@ -24,7 +25,7 @@ controla_menu_paused = function()
     {
         option --;
     }
-    if (down && option < 3)
+    if (down && option < 4)
     {
         option ++;
     }
@@ -47,6 +48,48 @@ controla_menu_paused = function()
         
             case 3:
             {
+                room_goto(rm_lobby)
+            }
+            break;
+        
+            case 4:
+            {
+                game_end()
+            }
+            break;
+        } 
+    }
+}
+
+controla_menu_lobby = function()
+{
+    if (up && option > 1)
+    {
+        option --;
+    }
+    if (down && option < 3)
+    {
+        option ++;
+    }
+    
+    if (confirm)
+    {
+        switch (option) 
+        {
+        	case 1:
+            {
+                global.pause = false;
+            }
+            break;
+        
+            case 2:
+            {
+                
+            }
+            break;
+        
+            case 3:
+            {
                 game_end();
             }
             break;
@@ -60,7 +103,7 @@ controla_menu_morto = function()
     {
         option --;
     }
-    if (down && option < 2)
+    if (down && option < 3)
     {
         option ++;
     }
@@ -76,6 +119,12 @@ controla_menu_morto = function()
             break;
         
             case 2:
+            {
+                room_goto(rm_lobby)
+            }
+            break;
+        
+            case 3:
             {
                 game_end();
             }

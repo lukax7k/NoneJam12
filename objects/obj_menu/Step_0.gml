@@ -1,3 +1,12 @@
+if (room == rm_lobby)
+{
+    in_lobby = true
+}
+else 
+{
+	in_lobby = false
+}
+
 Abrir_menu()
 
 var _camx = camera_get_view_x(view_camera[0])
@@ -14,8 +23,18 @@ fim_de_jogo = global.morreu;
 
 if (menu_ativo)
 {
-    pega_input();
-    controla_menu_paused();
+    if (in_lobby)
+    {
+        pega_input(); 
+        controla_menu_lobby(); 
+    }
+    else 
+    {
+        pega_input(); 
+        controla_menu_paused(); 
+    }
+    
+    
 }
 else if (fim_de_jogo)
 {
