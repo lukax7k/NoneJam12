@@ -37,6 +37,8 @@ tempo_invencivel = 90
 tomando_ricochete = false
 
 
+
+
 pega_input = function()
 {
     left = keyboard_check(vk_left)
@@ -308,6 +310,7 @@ maquina_de_estados = function()
             aplica_vel()
             
             sprite_index = spr_player_idle;
+            image_speed = 1;
             
             if (right xor left)
             {
@@ -335,6 +338,7 @@ maquina_de_estados = function()
         case "andando":
         {
             aplica_vel()
+            image_speed = 1;
            
             //sprite_index = spr_player_walk
             
@@ -363,6 +367,7 @@ maquina_de_estados = function()
         case "pulando":
         {
             aplica_vel()
+            image_speed = 1;
             
             // sprite_index = spr_player_jump
             
@@ -387,6 +392,7 @@ maquina_de_estados = function()
         case "tomando_dano":
         {
             aplica_vel()
+            image_speed = 1;
             
             sprite_index = spr_player_damage
             

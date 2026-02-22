@@ -8,8 +8,21 @@ var _p1 = .85
 var _p2 = .75
 
 draw_sprite(spr_background_ceu, 0, _camx, _camy)
-draw_sprite(spr_background_level1_0, 0, _camx * _p, 1280)
-draw_sprite(spr_background_level1_1, 0, _camx * _p1, 1290)
-draw_sprite(spr_background_level1_2, 0, _camx * _p2, 1320)
+
+if (!global.mundo_invertido)
+{
+    draw_sprite(spr_background_level1_0, 0, _camx * _p, 1280)
+    draw_sprite(spr_background_level1_1, 0, _camx * _p1, 1290)
+    draw_sprite(spr_background_level1_2, 0, _camx * _p2, 1320)
+}
+else
+{
+    draw_sprite(spr_background_level1_laranja_0, 0, _camx * _p, 900)
+    draw_sprite(spr_background_level1_laranja_1, 0, _camx * _p1, 930)
+    draw_sprite(spr_background_level1_laranja_2, 0, _camx * _p2, 960)
+}
+
+
+
 
 

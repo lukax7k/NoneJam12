@@ -1,3 +1,3 @@
 draw_self()
 
-// draw_text(x + 20, y, global.mundo_invertido)
+//draw_text(x + 20, y, seletor)

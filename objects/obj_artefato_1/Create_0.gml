@@ -4,6 +4,7 @@ segue_player = function()
 {
     if (global.artefato_1)
     {
+        if (!instance_exists(obj_player)) return;
         
         x = lerp(x, obj_player.x + 38 * -obj_player.image_xscale, .3)
         y = lerp(y, obj_player.y - 16, .3)
