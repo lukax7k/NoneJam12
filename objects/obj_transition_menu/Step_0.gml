@@ -4,6 +4,7 @@ switch (action)
     {
         if (entrando)
         {
+            global.in_transition = true
             img += img_vel
         
             if (img - img_num > cols + 1)
@@ -19,6 +20,7 @@ switch (action)
             
             if (img < -5) 
             {
+                global.in_transition = false
                 instance_destroy()
             }
         }
@@ -30,6 +32,7 @@ switch (action)
         if (entrando)
     {
         img += img_vel
+        global.in_transition = true
     
         if (img - img_num > cols + 1)
         {
@@ -45,6 +48,7 @@ switch (action)
         
         if (img < -5) 
         {
+            global.in_transition = false
             instance_destroy()
         }
     }

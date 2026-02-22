@@ -13,7 +13,21 @@ if (speed < 0)
 {
     image_xscale = 1
 }
-else 
+else if (speed > 0)
 {
     image_xscale = -1
+}
+
+
+
+if (global.pause)
+{
+    image_speed = 0
+    speed = 0
+}
+else 
+{
+    image_speed = 1
+    speed = spd_salva
+    trocando_lado()
 }

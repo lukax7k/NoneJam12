@@ -5,7 +5,9 @@ max_velv = 8
 max_velv_esc = 3
 
 velh = 0
-max_velh = 5
+max_velh = 2
+max_velh_correndo = 5
+max_velh_aplicada = max_velh
 
 grav = .4
 
@@ -13,6 +15,7 @@ left = 0
 right = 0
 jump = 0
 down = 0
+correr = 0
 pega_portal = 0
 interagir = 0
 
@@ -47,6 +50,7 @@ pega_input = function()
     down = keyboard_check(vk_down)
     pega_portal = keyboard_check_pressed(vk_tab)
     interagir = keyboard_check_pressed(ord("E"))
+    correr = keyboard_check(vk_shift)
     
 }
 
@@ -58,13 +62,31 @@ troca_mundos = function()
     {
         if (global.mundo_invertido)
         { 
-            global.mundo_invertido = false
+            instance_create_layer(0, 0, "Transition", obj_transition_portal)
+            
         }
         else 
         {
-        	global.mundo_invertido = true
+            instance_create_layer(0, 0, "Transition", obj_transition_portal)
+        	
         }
         
+    }
+}
+
+entrando_portal = function()
+{
+    var _portal = instance_position(x, y, obj_portal)
+    
+    if (_portal != noone)
+    {
+        x = lerp(x, _portal.x, .2)
+        y = lerp(y, _portal.y, .2)
+        
+        if (point_distance(x, y, _portal.x, _portal.y) < 10)
+        {
+            image_alpha = 0
+        }
     }
 }
 
@@ -158,6 +180,20 @@ arruma_dir = function()
     }
 }
 
+correndo = function()
+{
+    if (correr)
+    {
+        
+        max_velh_aplicada = max_velh_correndo
+    }
+    else 
+    {
+        
+    	max_velh_aplicada = max_velh
+    }
+}
+
 aplica_vel = function()
 {
     checa_chao()
@@ -165,7 +201,7 @@ aplica_vel = function()
     
     if (!tomando_ricochete)
     {
-       velh = (right - left) * max_velh  
+       velh = (right - left) * max_velh_aplicada
     }
     
     if (!chao)

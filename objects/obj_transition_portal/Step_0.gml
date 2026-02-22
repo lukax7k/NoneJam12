@@ -1,13 +1,13 @@
 if (entrando)
 {
-    img += img_vel
     global.in_transition = true
+    img += img_vel
 
     if (img - img_num > cols + 1)
     {
         if (room_exists(global.destino))
         {
-           room_goto(global.destino)
+           global.mundo_invertido = !global.mundo_invertido
             
             entrando = false
         }
