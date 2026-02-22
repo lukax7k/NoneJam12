@@ -42,13 +42,17 @@ controla_menu_paused = function()
         
             case 2:
             {
-                room_restart();
+                var _transition = instance_create_layer(0, 0, "Transition", obj_transition_menu)
+                _transition.action = "reset"
+                global.pause = false;
             }
             break;
         
             case 3:
             {
-                room_goto(rm_lobby)
+                var _transition = instance_create_layer(0, 0, "Transition", obj_transition_menu)
+                _transition.action = "lobby"
+                global.pause = false;
             }
             break;
         
@@ -114,13 +118,17 @@ controla_menu_morto = function()
         {
         	case 1:
             {
-                room_restart();
+                var _transition = instance_create_layer(0, 0, "Transition", obj_transition_menu)
+                _transition.action = "reset"
+                global.morreu = false;
             }
             break;
         
             case 2:
             {
-                room_goto(rm_lobby)
+                var _transition = instance_create_layer(0, 0, "Transition", obj_transition_menu)
+                _transition.action = "lobby"
+                global.morreu = false;
             }
             break;
         

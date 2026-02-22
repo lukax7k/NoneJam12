@@ -2,7 +2,9 @@ image_speed = 0;
 
 entra_level = function()
 {
-    room_goto(level)
+    global.destino = level
+    instance_create_layer(0, 0, "Transition", obj_transition_lobby)
+    
 }
 
 abre_porta = function()
