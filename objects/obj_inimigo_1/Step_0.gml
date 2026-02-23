@@ -1,5 +1,6 @@
 mundo_origem = !global.mundo_invertido
 
+
 if (!mundo_origem)
 {
     image_alpha = 0
@@ -7,6 +8,7 @@ if (!mundo_origem)
 else 
 {
     image_alpha = 1	
+    ficar_paralizado()
 }
 
 if (speed < 0)
@@ -20,7 +22,7 @@ else if (speed > 0)
 
 
 
-if (global.pause)
+if (global.pause || paralizado)
 {
     image_speed = 0
     speed = 0
@@ -30,4 +32,10 @@ else
     image_speed = 1
     speed = spd_salva
     trocando_lado()
+    
+}
+
+if (!global.pause)
+{
+    remove_paralizia()
 }

@@ -7,4 +7,6 @@ if (!mundo_origem)
 else 
 {
     image_alpha = 1	
+    subindo()
+    descendo()
 }

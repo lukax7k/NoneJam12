@@ -39,18 +39,104 @@ tempo_invencivel = 90
 
 tomando_ricochete = false
 
+saindo_portal = false
 
+magia_atual = 0
+usar_magia_atual = false
+
+cooldown_magias = 60
+timer_magias = 0
+
+magias_player = []
 
 
 pega_input = function()
 {
-    left = keyboard_check(vk_left)
-    right = keyboard_check(vk_right)
-    jump = keyboard_check(vk_up)
-    down = keyboard_check(vk_down)
+    left = keyboard_check(ord("A"))
+    right = keyboard_check(ord("D"))
+    jump = keyboard_check(ord("W"))
+    down = keyboard_check(ord("S"))
     pega_portal = keyboard_check_pressed(vk_tab)
     interagir = keyboard_check_pressed(ord("E"))
-    correr = keyboard_check(vk_shift)
+    if(keyboard_check_pressed(vk_shift))
+    {
+        correr = !correr
+    }
+    
+    usar_magia_atual = mouse_check_button_pressed(mb_left)
+    
+}
+
+listando_magias = function()
+{
+    var _total_magias = array_length(global.magias_totais)
+    
+    for (var i = 0; i < _total_magias; i++) 
+    {
+    	if (global.magias_totais[i].possui == true )
+        {
+            if (!array_contains(magias_player, global.magias_totais[i]))
+            {
+                array_push(magias_player, global.magias_totais[i])
+            }
+            
+        }
+    }
+   
+}
+
+escolhendo_magias = function()
+{
+    if (array_length(magias_player) > 1)
+    {
+        if (mouse_wheel_up())
+        {
+            magia_atual --
+        }
+        else if (mouse_wheel_down())
+        {
+            magia_atual ++
+        }
+    }
+    
+    if (magia_atual >= array_length(magias_player))
+    {
+        magia_atual = 0
+    }
+    else if (magia_atual < 0)
+    {
+        magia_atual = array_length(magias_player) -1
+    }
+    
+    show_debug_message(magias_player)
+    
+    if (magias_player[magia_atual].nome == "Bolha Gravitacional")
+    {
+        if (!instance_exists(obj_bolha_grav))
+        {
+            instance_create_layer(mouse_x, mouse_y, "Player", obj_bolha_grav)
+        }
+    }
+}
+
+usando_magia = function()
+{
+    if (timer_magias > 0)
+    {
+        timer_magias --
+    }
+    else 
+    {
+    	if (usar_magia_atual)
+        {
+            if (magias_player[magia_atual].nome == "Esfera Mágica")
+            {
+               usar_esfera_magica()
+                timer_magias = cooldown_magias 
+            }
+            
+        }
+    }
     
 }
 
@@ -81,12 +167,15 @@ entrando_portal = function()
     if (_portal != noone)
     {
         x = lerp(x, _portal.x, .2)
-        y = lerp(y, _portal.y, .2)
+        y = lerp(y, _portal.y+10, .2)
         
-        if (point_distance(x, y, _portal.x, _portal.y) < 10)
+        troca_sprite(spr_player_portal_entrando)
+        if (acabou_animacao())
         {
             image_alpha = 0
         }
+        saindo_portal = true
+        
     }
 }
 
@@ -172,11 +261,25 @@ arruma_dir = function()
     
     if (velh > 0)
     {
+        //image_xscale = lerp(image_xscale, 1, .4)
         image_xscale = 1
     }
     else if (velh < 0)
     {
+        //image_xscale = lerp(image_xscale, -1, .4)
         image_xscale = -1
+    }
+    else 
+    {
+        if (image_xscale > 0)
+        {
+            image_xscale = ceil(image_xscale)
+        }
+        else if (image_xscale < 0)
+        {
+            image_xscale = floor(image_xscale)
+        }
+    	
     }
 }
 
@@ -184,7 +287,6 @@ correndo = function()
 {
     if (correr)
     {
-        
         max_velh_aplicada = max_velh_correndo
     }
     else 
@@ -197,7 +299,7 @@ correndo = function()
 aplica_vel = function()
 {
     checa_chao()
-    arruma_dir()
+    
     
     if (!tomando_ricochete)
     {
@@ -334,7 +436,36 @@ toma_dano = function(_dano = 1)
     if (vida <= 0)
     {
         global.morreu = true;
-        instance_destroy()
+          
+    }
+}
+
+morrendo = function()
+{
+    sprite_index = spr_player_death
+
+        if (acabou_animacao())
+        {
+            instance_destroy()
+        }      
+}
+
+troca_sprite = function(_sprite)
+{
+    if (sprite_index != _sprite)
+    {
+        sprite_index = _sprite; 
+        
+        image_index = 0;
+    }
+}
+
+acabou_animacao = function()
+{
+    var _spd = sprite_get_speed(sprite_index) / game_get_speed(gamespeed_fps);
+    if (image_index + _spd >= image_number)
+    {
+       return true;
     }
 }
 
@@ -346,7 +477,11 @@ maquina_de_estados = function()
         {
             aplica_vel()
             
-            sprite_index = spr_player_idle;
+            if (acabou_animacao())
+            {
+                troca_sprite(spr_player_idle);
+            }
+            
             image_speed = 1;
             
             if (right xor left)
@@ -376,8 +511,25 @@ maquina_de_estados = function()
         {
             aplica_vel()
             image_speed = 1;
-           
-            //sprite_index = spr_player_walk
+            
+            if (correr)
+            {
+                if (acabou_animacao())
+                {
+                    troca_sprite(spr_player_run)
+                }
+                
+            }
+            else 
+            {
+                if (acabou_animacao())
+                {
+                    troca_sprite(spr_player_idle)
+                }
+                
+            }
+            
+            
             
             if (velh == 0)
             {
@@ -406,11 +558,25 @@ maquina_de_estados = function()
             aplica_vel()
             image_speed = 1;
             
-            // sprite_index = spr_player_jump
+            if (velv < 0)
+            {
+                troca_sprite(spr_player_jump_up)
+               
+                if(acabou_animacao())
+                {
+                    troca_sprite(spr_player_idle)
+                }
+            }
+            else 
+            {
+                troca_sprite(spr_player_idle)	
+            }
+          
             
             if (chao)
             {
                 estado = "parado"
+                troca_sprite(spr_player_jump_down)
             }
             
             if (escada && jump)
@@ -439,7 +605,7 @@ maquina_de_estados = function()
         case "escalando":
         {
             aplica_vel_escalando()
-            //sprite_index = spr_player_climb
+            troca_sprite(spr_player_climb)
             
             if (jump xor down)
             {
