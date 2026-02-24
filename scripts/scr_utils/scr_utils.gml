@@ -17,3 +17,17 @@ global.estrelinhas_col = [
     {id: 1, pega: false},
     {id: 2, pega: false},
 ]
+
+global.cristais_temp = 0
+
+global.cristais = 300
+
+global.vida_player = 3
+
+global.vida_esgotada = false
+
+global.grav_esgotada = false
+
+global.impulso_esgotada = false
+
+global.grav_bolha = false

@@ -26,6 +26,12 @@ switch (action)
                 }
             }
             
+            if (global.cristais_temp != 0)
+            {
+                global.cristais += global.cristais_temp
+            }
+            global.cristais_temp = 0
+            
             
             room_goto(rm_lobby)
             

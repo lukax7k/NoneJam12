@@ -1,6 +1,6 @@
 listando_magias()
 
-if (global.pause) 
+if (global.pause xor global.loja) 
 {
     image_speed = 0
 }

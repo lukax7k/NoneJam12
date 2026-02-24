@@ -11,12 +11,20 @@ option = 1;
 
 up = 0;
 down = 0;
+confirm = 0
+sair = 0
+
+valor_vida = 60
+            
+            
+
 
 pega_input = function()
 {
     up = keyboard_check_pressed(ord("W"));
     down = keyboard_check_pressed(ord("S"));
     confirm = keyboard_check_pressed(ord("E")) xor keyboard_check_pressed(vk_enter);
+    sair = keyboard_check_pressed(vk_escape)
 }
 
 controla_menu_paused = function()
@@ -101,6 +109,66 @@ controla_menu_lobby = function()
     }
 }
 
+controla_menu_loja = function()
+{
+    if (up && option > 1)
+    {
+        option --;
+    }
+    if (down && option < 4)
+    {
+        option ++;
+    }
+    
+    
+    
+    if (confirm)
+    {
+        switch (option) 
+        {
+        	case 1:
+            {
+                if (global.cristais >= valor_vida && !global.vida_esgotada)
+                {
+                    global.cristais -= valor_vida
+                    global.vida_player ++
+                    obj_player.vida = global.vida_player
+                }
+                
+            }
+            break;
+        
+            case 2:
+            {
+                if (global.cristais >= 50 && !global.grav_esgotada)
+                {
+                    global.cristais -= 50
+                    global.magias_totais[1].possui = true
+                    global.grav_esgotada = true
+                }
+            } 
+            break;
+        
+            case 3:
+            {
+                if (global.cristais >= 50 && !global.impulso_esgotada)
+                {
+                    global.cristais -= 50
+                    global.magias_totais[2].possui = true
+                    global.impulso_esgotada = true
+                }
+            }
+            break;
+        
+            case 4:
+            {
+                global.loja = false
+            }
+            break;
+        } 
+    }
+}
+
 controla_menu_morto = function()
 {
     if (up && option > 1)
@@ -147,10 +215,16 @@ Abrir_menu = function()
 {
     if (global.pause)
     {
+        
         image_alpha = 1
+    }
+    else if (global.loja) 
+    {
+    	image_alpha = 1
     }
     else if (global.morreu)
     {
+        
         image_alpha = 1
     }
     else 

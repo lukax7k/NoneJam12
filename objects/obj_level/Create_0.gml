@@ -12,6 +12,7 @@ global.pause = false
 
 global.morreu = false
 
+global.loja = false
 
 if (!instance_exists(obj_menu))
 {

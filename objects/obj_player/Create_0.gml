@@ -32,7 +32,7 @@ teto = false
 escada = false
 escada_topo = false
 
-vida = 3
+vida = global.vida_player
 
 timer_invencivel = 0
 tempo_invencivel = 90
@@ -48,6 +48,17 @@ cooldown_magias = 60
 timer_magias = 0
 
 magias_player = []
+
+dash_cooldown = 0
+max_dash_cooldown = 90
+max_dash_duration = 15
+dash_duration = max_dash_duration
+
+
+minha_sprite = spr_player_idle
+x_scale = 1
+y_scale = 1
+
 
 
 pega_input = function()
@@ -69,7 +80,10 @@ pega_input = function()
 
 listando_magias = function()
 {
+    
     var _total_magias = array_length(global.magias_totais)
+    
+    array_delete(magias_player, 0, _total_magias)
     
     for (var i = 0; i < _total_magias; i++) 
     {
@@ -114,8 +128,33 @@ escolhendo_magias = function()
     {
         if (!instance_exists(obj_bolha_grav))
         {
-            instance_create_layer(mouse_x, mouse_y, "Player", obj_bolha_grav)
+            if (!global.mundo_invertido)
+            {
+                instance_create_layer(mouse_x, mouse_y, "Player", obj_bolha_grav)
+            }
+            else 
+            {
+                instance_create_layer(x - 4 * x_scale, y - 12, "Player", obj_bolha_grav)
+                
+            }
         }
+    }
+    else if (magias_player[magia_atual].nome == "Avanço rápido")
+    {
+        if (dash_cooldown > 0)
+        {
+            dash_cooldown --
+        }
+        else 
+        {
+        	if (usar_magia_atual)
+            {
+                estado = "dash"
+                dash_cooldown = max_dash_cooldown
+            }
+        }
+        
+        
     }
 }
 
@@ -261,23 +300,23 @@ arruma_dir = function()
     
     if (velh > 0)
     {
-        //image_xscale = lerp(image_xscale, 1, .4)
-        image_xscale = 1
+        x_scale = lerp(x_scale, 1, .4)
+        //image_xscale = 1
     }
     else if (velh < 0)
     {
-        //image_xscale = lerp(image_xscale, -1, .4)
-        image_xscale = -1
+        x_scale = lerp(x_scale, -1, .4)
+        //image_xscale = -1
     }
     else 
     {
-        if (image_xscale > 0)
+        if (x_scale > 0)
         {
-            image_xscale = ceil(image_xscale)
+            x_scale = ceil(x_scale)
         }
-        else if (image_xscale < 0)
+        else if (x_scale < 0)
         {
-            image_xscale = floor(image_xscale)
+            x_scale = floor(x_scale)
         }
     	
     }
@@ -308,8 +347,24 @@ aplica_vel = function()
     
     if (!chao)
     {
-        
+        if (velv <= 0)
+        {
             velv += grav
+        }
+        else 
+        {
+            if (global.grav_bolha)
+            {
+                velv += grav/6
+                
+                velv = clamp(velv, 0, .8)
+            }	
+            else 
+            {
+            	velv += grav
+            }
+        }
+        
         
         if (velv > 0 && escada_topo)
         {
@@ -633,6 +688,52 @@ maquina_de_estados = function()
         }
             
         break;
+    
+        case "dash": 
+        {
+           
+            
+           troca_sprite(spr_player_idle)
+            
+           if (dash_duration > 0)
+           {
+            if (global.mundo_invertido)
+            {
+                x_scale = x_scale *1.2
+                y_scale = .8
+             
+                velh = 12 * x_scale;
+                velv = 0;
+                dash_duration --;
+                var _rastro = instance_create_layer(x, y, layer, obj_player_rastro)
+                _rastro.image_xscale = x_scale
+                _rastro.image_yscale = y_scale 
+            }
+            else 
+            {
+            	x_scale = x_scale * .8
+                y_scale = 1.2
+             
+                velv = -6;
+                dash_duration --;
+                var _rastro = instance_create_layer(x, y, layer, obj_player_rastro)
+                _rastro.image_xscale = x_scale
+                _rastro.image_yscale = y_scale
+            }
+               
+            
+           }
+           else 
+           {
+            x_scale = 1
+            y_scale = 1
+           	   estado = "parado";
+               
+               dash_cooldown = max_dash_cooldown;
+               dash_duration = max_dash_duration;
+           }
+           
+       }
     
     }
 }
