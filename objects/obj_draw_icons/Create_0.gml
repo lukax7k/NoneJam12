@@ -21,9 +21,11 @@ draw_icons = function()
 
 draw_points = function()
 {
-    draw_sprite_ext(spr_estrelinha, 0, 1280 - 40, 10, 3, 3, 0, c_white, 1)
+    draw_sprite_ext(spr_estrelinha, 0, 1280 - 110, 0, 3, 3, 0, c_white, 1)
     
-   
-    draw_text(1280 - 40, 20, "X " + string(global.estrelinhas))
-    
+    draw_set_font(fnt_num)
+    draw_set_halign(fa_bottom)
+    draw_text(1280 - 22, 23, "x " + string(global.estrelinhas + global.estrelinhas_temp))
+    draw_set_halign(-1)
+    draw_set_font(-1)
 }

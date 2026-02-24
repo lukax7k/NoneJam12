@@ -56,6 +56,7 @@
   "name":"NoneJam12",
   "resources":[
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
+    {"id":{"name":"fnt_num","path":"fonts/fnt_num/fnt_num.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"obj_arbusto_canto","path":"objects/obj_arbusto_canto/obj_arbusto_canto.yy",},},
     {"id":{"name":"obj_armadilha_espinho","path":"objects/obj_armadilha_espinho/obj_armadilha_espinho.yy",},},
@@ -89,6 +90,7 @@
     {"id":{"name":"obj_transition_lobby","path":"objects/obj_transition_lobby/obj_transition_lobby.yy",},},
     {"id":{"name":"obj_transition_menu","path":"objects/obj_transition_menu/obj_transition_menu.yy",},},
     {"id":{"name":"obj_transition_portal","path":"objects/obj_transition_portal/obj_transition_portal.yy",},},
+    {"id":{"name":"obj_transition_win","path":"objects/obj_transition_win/obj_transition_win.yy",},},
     {"id":{"name":"obj_vinha_base_laranja","path":"objects/obj_vinha_base_laranja/obj_vinha_base_laranja.yy",},},
     {"id":{"name":"obj_vinha_base","path":"objects/obj_vinha_base/obj_vinha_base.yy",},},
     {"id":{"name":"obj_vinha_laranja","path":"objects/obj_vinha_laranja/obj_vinha_laranja.yy",},},
@@ -304,8 +306,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_level_1","path":"rooms/rm_level_1/rm_level_1.yy",},},
     {"roomId":{"name":"rm_lobby","path":"rooms/rm_lobby/rm_lobby.yy",},},
+    {"roomId":{"name":"rm_level_1","path":"rooms/rm_level_1/rm_level_1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

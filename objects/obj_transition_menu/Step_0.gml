@@ -10,6 +10,11 @@ switch (action)
             if (img - img_num > cols + 1)
             {
                 room_restart()    
+                global.estrelinhas_temp = 0
+                for (var i = 0; i < array_length(global.estrelinhas_col_temp); i++) 
+                {
+                    global.estrelinhas_col_temp[i].pega = false
+                }
                 entrando = false
                 
             }
@@ -38,6 +43,13 @@ switch (action)
         {
             
             room_goto(rm_lobby)
+            global.estrelinhas_temp = 0
+            for (var i = 0; i < array_length(global.estrelinhas_col_temp); i++) 
+            {
+            	
+                    global.estrelinhas_col_temp[i].pega = false
+                
+            }
             entrando = false
             
         }

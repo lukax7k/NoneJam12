@@ -44,6 +44,7 @@ if (menu_ativo)
         
         draw_set_font(-1);
         draw_set_halign(-1);
+        draw_set_valign(-1);
         
     }
     else 
@@ -99,6 +100,7 @@ if (menu_ativo)
         
         draw_set_font(-1);
         draw_set_halign(-1);
+        draw_set_valign(-1);
     }
     
 }
@@ -151,4 +153,5 @@ if (fim_de_jogo)
     
     draw_set_font(-1);
     draw_set_halign(-1);
+    draw_set_valign(-1);
 }

@@ -1,3 +1,5 @@
-global.estrelinhas ++
 
-instance_destroy()
+
+coletada = true
+
+

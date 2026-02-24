@@ -10,3 +10,5 @@ if (!global.morreu and !global.in_transition)
         global.pause = !global.pause
     }
 }
+
+passando_level()
