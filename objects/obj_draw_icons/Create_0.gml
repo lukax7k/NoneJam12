@@ -8,7 +8,15 @@ draw_icons = function()
             
             if (obj_player.magia_atual == i)
             {
-                draw_sprite_ext(obj_player.magias_player[i].icon_a, 0, 30 + _spc * i, 100, 2, 2, 0, c_white, 1)
+                if (global.magias_totais[i].em_cooldown)
+                {
+                    draw_sprite_ext(obj_player.magias_player[i].icon_a, 0, 30 + _spc * i, 100, 2, 2, 0, c_gray, 1)
+                }
+                else 
+                {
+                	draw_sprite_ext(obj_player.magias_player[i].icon_a, 0, 30 + _spc * i, 100, 2, 2, 0, c_white, 1)
+                }
+                
             }
             else 
             {

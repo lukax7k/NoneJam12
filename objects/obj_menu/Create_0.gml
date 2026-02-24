@@ -14,7 +14,7 @@ down = 0;
 confirm = 0
 sair = 0
 
-valor_vida = 60
+valor_vida = 120
             
             
 
@@ -140,9 +140,9 @@ controla_menu_loja = function()
         
             case 2:
             {
-                if (global.cristais >= 50 && !global.grav_esgotada)
+                if (global.cristais >= 100 && !global.grav_esgotada)
                 {
-                    global.cristais -= 50
+                    global.cristais -= 100
                     global.magias_totais[1].possui = true
                     global.grav_esgotada = true
                 }
@@ -151,9 +151,9 @@ controla_menu_loja = function()
         
             case 3:
             {
-                if (global.cristais >= 50 && !global.impulso_esgotada)
+                if (global.cristais >= 100 && !global.impulso_esgotada)
                 {
-                    global.cristais -= 50
+                    global.cristais -= 100
                     global.magias_totais[2].possui = true
                     global.impulso_esgotada = true
                 }

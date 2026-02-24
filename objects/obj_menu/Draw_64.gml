@@ -85,12 +85,12 @@ if (menu_ativo)
                 if (option == 2)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 350, "Feitiço de gravidade       50");
+                    draw_text(640, 350, "Feitiço de gravidade       100");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 350, "Feitiço de gravidade       50");
+                	draw_text(640, 350, "Feitiço de gravidade       100");
                 }
             }
             else 
@@ -105,12 +105,12 @@ if (menu_ativo)
                 if (option == 3)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 430, "Feitiço de avanço            50");
+                    draw_text(640, 430, "Feitiço de avanço            100");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 430, "Feitiço de avanço            50");
+                	draw_text(640, 430, "Feitiço de avanço            100");
                 }
             }
             else 

@@ -1,4 +1,4 @@
-colisoes = [obj_player, obj_esfera_magica]
+colisoes = [obj_player, obj_esfera_magica, obj_galho]
 
 checa_colisao = function()
 {

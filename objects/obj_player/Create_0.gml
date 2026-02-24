@@ -14,6 +14,7 @@ grav = .4
 left = 0
 right = 0
 jump = 0
+up = 0
 down = 0
 correr = 0
 pega_portal = 0
@@ -51,7 +52,7 @@ magias_player = []
 
 dash_cooldown = 0
 max_dash_cooldown = 90
-max_dash_duration = 15
+max_dash_duration = 10
 dash_duration = max_dash_duration
 
 
@@ -65,7 +66,8 @@ pega_input = function()
 {
     left = keyboard_check(ord("A"))
     right = keyboard_check(ord("D"))
-    jump = keyboard_check(ord("W"))
+    jump = keyboard_check(vk_space)
+    up = keyboard_check(ord("W"))
     down = keyboard_check(ord("S"))
     pega_portal = keyboard_check_pressed(vk_tab)
     interagir = keyboard_check_pressed(ord("E"))
@@ -147,9 +149,11 @@ escolhendo_magias = function()
         }
         else 
         {
+            global.magias_totais[2].em_cooldown = false
         	if (usar_magia_atual)
             {
                 estado = "dash"
+                global.magias_totais[2].em_cooldown = true
                 dash_cooldown = max_dash_cooldown
             }
         }
@@ -166,11 +170,13 @@ usando_magia = function()
     }
     else 
     {
+        global.magias_totais[0].em_cooldown = false
     	if (usar_magia_atual)
         {
             if (magias_player[magia_atual].nome == "Esfera Mágica")
             {
                usar_esfera_magica()
+                global.magias_totais[0].em_cooldown = true
                 timer_magias = cooldown_magias 
             }
             
@@ -435,7 +441,7 @@ aplica_vel_escalando = function()
         
         if (place_meeting(x, y , obj_escada)) 
         {
-            velv = (down - jump) * max_velv_esc;
+            velv = (down - up) * max_velv_esc;
             
         }
         else if (escada_topo)
@@ -549,7 +555,7 @@ maquina_de_estados = function()
                 estado = "pulando"
             }
             
-            if (escada && jump)
+            if (escada && up)
             {
                 estado = "escalando"
             }
@@ -596,7 +602,7 @@ maquina_de_estados = function()
                 estado = "pulando"
             }
             
-            if (escada && jump)
+            if (escada && up)
             {
                 estado = "escalando"
             }
@@ -634,7 +640,7 @@ maquina_de_estados = function()
                 troca_sprite(spr_player_jump_down)
             }
             
-            if (escada && jump)
+            if (escada && up)
             {
                 estado = "escalando"
             }
@@ -662,7 +668,7 @@ maquina_de_estados = function()
             aplica_vel_escalando()
             troca_sprite(spr_player_climb)
             
-            if (jump xor down)
+            if (up xor down)
             {
                 image_speed = 1;
             }

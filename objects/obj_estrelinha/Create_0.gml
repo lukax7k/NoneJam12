@@ -77,7 +77,7 @@ indo_embora = function()
     
     
     direction = point_direction(x, y, _x_alvo, _y_alvo)
-    speed = 8
+    speed = 12
     
     if (x >= _x_alvo - 5 && y < _y_alvo + 5)
     {

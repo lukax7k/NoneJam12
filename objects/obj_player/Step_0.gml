@@ -1,6 +1,6 @@
 listando_magias()
 
-if (global.pause xor global.loja) 
+if (global.pause) 
 {
     image_speed = 0
 }
@@ -8,6 +8,18 @@ else if (global.morreu)
 {
     image_speed = 1
     morrendo()
+}
+else if (global.loja)
+{
+    image_speed = 1
+    velh = 0
+    right = 0
+    left = 0
+    jump = 0
+    down = 0
+    maquina_de_estados()
+    movimento()
+    
 }
 else 
 { 
