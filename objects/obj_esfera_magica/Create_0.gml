@@ -1,6 +1,6 @@
 dir = 0
 
-colisoes = [obj_chao]
+colisoes = [obj_chao, obj_totem]
 
 range = 3
 tempo_destruir = range * game_get_speed(gamespeed_fps)
