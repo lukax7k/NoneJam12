@@ -20,7 +20,15 @@ else
 
 if (global.artefato_1)
 {
-    sprite_index = sprite_normal
+    if (global.giro_foda)
+    {
+        sprite_index = spr_estrela_artefato_2_uau
+    }
+    else 
+    {
+    	sprite_index = sprite_normal
+    }
+    
 }
 
 if (meu_totem == obj_totem_2)

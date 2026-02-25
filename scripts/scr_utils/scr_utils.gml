@@ -10,12 +10,18 @@ global.estrelinhas_col_temp = [
     {id: 0, pega: false},
     {id: 1, pega: false},
     {id: 2, pega: false},
+    {id: 3, pega: false},
+    {id: 4, pega: false},
+    {id: 5, pega: false},
 ]
 
 global.estrelinhas_col = [
     {id: 0, pega: false},
     {id: 1, pega: false},
     {id: 2, pega: false},
+    {id: 3, pega: false},
+    {id: 4, pega: false},
+    {id: 5, pega: false},
 ]
 
 global.cristais_temp = 0
@@ -31,3 +37,5 @@ global.grav_esgotada = false
 global.impulso_esgotada = false
 
 global.grav_bolha = false
+
+global.giro_foda = false

@@ -14,6 +14,7 @@ grav = .4
 left = 0
 right = 0
 jump = 0
+jump_r = 0
 up = 0
 down = 0
 correr = 0
@@ -61,12 +62,20 @@ x_scale = 1
 y_scale = 1
 
 
+coyote_timer = 6
+coyote_timer_atual = coyote_timer
+
+corner_pixels = 10
+
+dano_de_cima = false
+
 
 pega_input = function()
 {
     left = keyboard_check(ord("A"))
     right = keyboard_check(ord("D"))
     jump = keyboard_check(vk_space)
+    jump_r = keyboard_check_released(vk_space)
     up = keyboard_check(ord("W"))
     down = keyboard_check(ord("S"))
     pega_portal = keyboard_check_pressed(vk_tab)
@@ -78,6 +87,22 @@ pega_input = function()
     
     usar_magia_atual = mouse_check_button_pressed(mb_left)
     
+}
+
+coyote_jump = function()
+{
+    checa_chao()
+    
+    if(!chao)
+    {
+        coyote_timer_atual --
+    }
+    else 
+    {
+    	coyote_timer_atual = coyote_timer
+        
+        
+    }
 }
 
 listando_magias = function()
@@ -207,7 +232,7 @@ troca_mundos = function()
 
 entrando_portal = function()
 {
-    var _portal = instance_position(x, y, obj_portal)
+    var _portal = instance_place(x, y, obj_portal)
     
     if (_portal != noone)
     {
@@ -422,10 +447,7 @@ aplica_vel = function()
         
     }
     
-    if (teto && velv < 0)
-    {
-        velv = 0;
-    }
+    
     
     velv = clamp(velv, -max_velv, max_velv)
 }
@@ -470,16 +492,23 @@ contador_invencivel = function()
 ricochete_dano = function()
 {
     tomando_ricochete = true
+    
     estado = "tomando_dano"
     
-    if (velh >= 0)
+    if (!dano_de_cima)
     {
-        velh = -5
-        velv = -10
-    }
-    else 
-    {
-    	velh = 5
+       if (velh >= 0)
+       {
+           velh = -5
+           
+       }
+       else 
+       { 
+           velh = 5
+           
+       }
+    
+    
         velv = -10
     }
     
@@ -503,12 +532,9 @@ toma_dano = function(_dano = 1)
 
 morrendo = function()
 {
-    sprite_index = spr_player_death
-
-        if (acabou_animacao())
-        {
-            instance_destroy()
-        }      
+    instance_create_layer(x, y, layer, obj_player_morto)
+    instance_destroy()
+             
 }
 
 troca_sprite = function(_sprite)
@@ -619,6 +645,60 @@ maquina_de_estados = function()
             aplica_vel()
             image_speed = 1;
             
+          
+            
+            if (place_meeting(x, y + sign(velv), colisoes))
+            {
+                
+                var _parar = true
+                
+                if (velv < 0) 
+                {
+                    if (velh >= 0)
+                    {
+                        for (var i = 0; i < corner_pixels; i++) 
+                        {
+                        	var _livre = !place_meeting(x + i, y + velv, colisoes)
+                            show_debug_message(i)
+                            
+                            if (_livre)
+                            {
+                                
+                                _parar = false
+                                
+                                x += i;
+                                
+                                break;
+                            }
+                            
+                        }
+                    }
+                    
+                    if (velv < 0 )
+                    {
+                        for (var i = 0; i < corner_pixels; i++) 
+                        {
+                        	var _livre = !place_meeting(x - i, y + velv, colisoes)
+                            show_debug_message(i)
+                            
+                            if (_livre)
+                            {
+                                
+                                _parar = false
+                                
+                                x -= i;
+                                
+                                break;
+                            }
+                        }
+                    }
+                    
+                    
+                }
+                
+                if (_parar) velv = 0
+            }
+            
             if (velv < 0)
             {
                 troca_sprite(spr_player_jump_up)
@@ -627,10 +707,22 @@ maquina_de_estados = function()
                 {
                     troca_sprite(spr_player_idle)
                 }
+                
+                if (jump_r)
+                {
+                    velv *= 0.5
+                }
             }
             else 
             {
                 troca_sprite(spr_player_idle)	
+            }
+            
+            if (coyote_timer_atual && jump)
+            {
+                velv = -max_velv
+                
+                coyote_timer_atual = 0
             }
           
             
@@ -677,11 +769,11 @@ maquina_de_estados = function()
                 image_speed = 0;	
             }
             
-            var _escada = instance_position(x, y, obj_escada)
+            var _escada = instance_place(x, y, obj_escada)
             
             if (_escada != noone)
             {
-              x = lerp(x, _escada.x, .1)  
+              x = lerp(x, _escada.x, .08)  
             }
             
             

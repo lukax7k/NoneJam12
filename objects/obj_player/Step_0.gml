@@ -43,6 +43,7 @@ else
         {
             correndo()
             movimento()
+            coyote_jump()
             arruma_dir()
             pega_input()
             troca_mundos()

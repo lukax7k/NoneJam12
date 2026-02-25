@@ -47,6 +47,7 @@ if (instance_exists(obj_player))
 {
     if (obj_player.magias_player[obj_player.magia_atual].nome != "Bolha Gravitacional")
     {
+        global.grav_bolha = false
         instance_destroy()
     }
 }

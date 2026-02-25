@@ -1,4 +1,5 @@
 var _azul_base = make_colour_rgb(97, 119, 255)
+var _cinza_escuro = make_colour_rgb(89, 89, 89)
 
 if (menu_ativo)
 {
@@ -75,9 +76,19 @@ if (menu_ativo)
             }
             else 
             {
-            	draw_set_colour(c_gray);
-                draw_text(640, 270, "Vida extra                       --");
-                draw_set_colour(-1);
+                if (option == 1)
+                {
+                    draw_set_colour(c_gray);
+                    draw_text(640, 270, "Vida extra                       --");
+                    draw_set_colour(-1);
+                }
+                else 
+                {
+                	draw_set_colour(_cinza_escuro);
+                    draw_text(640, 270, "Vida extra                       --");
+                    draw_set_colour(-1);
+                }
+            	
             }
             
             if (!global.grav_esgotada)
@@ -95,9 +106,19 @@ if (menu_ativo)
             }
             else 
             {
-            	draw_set_colour(c_gray);
-                draw_text(640, 350, "Feitiço de gravidade       --");
-                draw_set_colour(-1);
+                if (option == 2)
+                {
+                    draw_set_colour(c_gray);
+                    draw_text(640, 350, "Feitiço de gravidade       --");
+                    draw_set_colour(-1);
+                }
+                else 
+                {
+                    draw_set_colour(_cinza_escuro);
+                    draw_text(640, 350, "Feitiço de gravidade       --");
+                    draw_set_colour(-1);
+                }
+            	
             }
             
             if (!global.impulso_esgotada)
@@ -115,9 +136,19 @@ if (menu_ativo)
             }
             else 
             {
-            	draw_set_colour(c_gray);
-                draw_text(640, 430, "Feitiço de avanço            --");
-                draw_set_colour(-1);
+                if (option == 3)
+                {
+                    draw_set_colour(c_gray);
+                    draw_text(640, 430, "Feitiço de avanço            --");
+                    draw_set_colour(-1);
+                }
+                else 
+                {
+                	draw_set_colour(_cinza_escuro);
+                    draw_text(640, 430, "Feitiço de avanço            --");
+                    draw_set_colour(-1);
+                }
+            	
             }
             
             

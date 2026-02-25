@@ -68,4 +68,34 @@ desenha_estrelas = function()
         }
         
     }
+    else if (estrelas == 1)
+    {
+        if (global.estrelinhas_col[3].pega == true)
+        {
+            draw_sprite_ext(spr_estrelinha, 0, x - 15, y - 120, 1, 1, 0, c_white, 1)
+        }
+        else 
+        {
+        	draw_sprite_ext(spr_estrelinha, 0, x - 15, y - 120, 1, 1, 0, c_black, 1)
+        }
+        
+        if (global.estrelinhas_col[4].pega == true)
+        {
+            draw_sprite_ext(spr_estrelinha, 0, x + 15, y - 130, 1, 1, 0, c_white, 1)
+        }
+        else 
+        {
+        	draw_sprite_ext(spr_estrelinha, 0, x + 15, y - 130, 1, 1, 0, c_black, 1)
+        }
+        
+        if (global.estrelinhas_col[5].pega == true)
+        {
+            draw_sprite_ext(spr_estrelinha, 0, x + 45, y - 120, 1, 1, 0, c_white, 1)
+        }
+        else 
+        {
+        	draw_sprite_ext(spr_estrelinha, 0, x + 45, y - 120, 1, 1, 0, c_black, 1)
+        }
+        
+    }
 }
