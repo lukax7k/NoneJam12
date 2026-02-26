@@ -27,7 +27,7 @@ pedestal_2 = false
 
 estado = "parado"
 
-colisoes = [obj_chao, obj_totem]
+colisoes = [obj_chao, obj_totem, obj_totem_b]
 
 chao = false
 teto = false

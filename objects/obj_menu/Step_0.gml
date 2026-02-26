@@ -36,7 +36,7 @@ var _camh = camera_get_view_height(view_camera[0])
 x = _camx + _camw/2
 y = _camy + _camh/2
 
-menu_ativo = global.pause xor global.loja;
+menu_ativo = global.pause xor global.loja xor global.ganhou;
 fim_de_jogo = global.morreu;
 
 if (menu_ativo)
@@ -61,8 +61,18 @@ if (menu_ativo)
     }
     else 
     {
-        pega_input(); 
-        controla_menu_paused(); 
+        if (global.ganhou)
+        {
+            pega_input(); 
+            controla_menu_win();
+        }
+        else 
+        {
+            pega_input(); 
+            controla_menu_paused(); 	
+        }
+        
+        
     }
     
     

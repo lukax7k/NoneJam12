@@ -10,5 +10,7 @@ if (!global.morreu and !global.in_transition and !global.loja)
         global.pause = !global.pause
     }
 }
-
-passando_level()
+if (!fiz_minha_parte)
+{
+    passando_level()
+}

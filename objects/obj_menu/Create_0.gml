@@ -73,6 +73,105 @@ controla_menu_paused = function()
     }
 }
 
+controla_menu_win = function()
+{
+    if (room != rm_level_3)
+    {
+        if (up && option > 1)
+        {
+            option --;
+        }
+        if (down && option < 4)
+        {
+            option ++;
+        }
+        
+        if (confirm)
+        {
+            switch (option) 
+            {
+            	case 1:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "next"
+                    global.ganhou = false
+                }
+                break;
+            
+                case 2:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "lobby"
+                    global.ganhou = false
+                    
+                }
+                break;
+            
+                case 3:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "reset"
+                    global.ganhou = false
+                    
+                }
+                break;
+            
+                case 4:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "end"
+                }
+                break;
+            } 
+        }
+    }
+    else 
+    {
+    	if (up && option > 1)
+        {
+            option --;
+        }
+        if (down && option < 3)
+        {
+            option ++;
+        }
+        
+        if (confirm)
+        {
+            switch (option) 
+            {
+            
+                case 1:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "lobby"
+                    global.ganhou = false
+                    
+                }
+                break;
+            
+                case 2:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "reset"
+                    global.ganhou = false
+                    
+                }
+                break;
+            
+                case 3:
+                {
+                    var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                    _transition.action = "end"
+                }
+                break;
+            } 
+        }
+    }
+        
+    
+}
+
 controla_menu_lobby = function()
 {
     if (up && option > 1)
@@ -215,7 +314,6 @@ Abrir_menu = function()
 {
     if (global.pause)
     {
-        
         image_alpha = 1
     }
     else if (global.loja) 
@@ -225,6 +323,10 @@ Abrir_menu = function()
     else if (global.morreu)
     {
         
+        image_alpha = 1
+    }
+    else if (global.ganhou)
+    {
         image_alpha = 1
     }
     else 

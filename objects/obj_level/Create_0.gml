@@ -8,11 +8,15 @@ global.primeiro_artefato = false
 
 global.segundo_artefato = false
 
+global.ganhou = false
+
 global.pause = false
 
 global.morreu = false
 
 global.loja = false
+
+fiz_minha_parte = false
 
 if (!instance_exists(obj_menu))
 {
@@ -23,7 +27,7 @@ passando_level = function()
 {
     if (global.segundo_artefato)
     {
-        var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
-        _transition.action = "lobby"
+        fiz_minha_parte = true
+        global.ganhou = true
     }
 }
