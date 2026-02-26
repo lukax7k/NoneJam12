@@ -8,11 +8,11 @@ atira_flecha = function()
     }
     else 
     {
-    	var _flecha = instance_create_layer(x, y - 10, layer, obj_flecha)
+    	var _flecha = instance_create_layer(x, y - 10, layer, obj_flecha_b)
         if (image_xscale == -1)
         {
             _flecha.dir = 180
-            _flecha.image_xscale = 180
+            _flecha.image_xscale = -1
         }
         
         timer_flecha = irandom_range(120, 150)

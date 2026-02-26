@@ -8,7 +8,7 @@ paralizado = false
 cooldown_paralizado = 180
 timer_paralizado = 0
 
-colisoes = [obj_chao]
+colisoes = [obj_chao, obj_inimigo_2]
 
 velv = 0
 max_velv = 4
@@ -23,6 +23,8 @@ grav_invert = false
 chao = false
 
 buraco = false
+buraco_esq = false
+buraco_dir = false
 
 tempo_pedrada = irandom_range(90, 150)
 timer_pedrada = tempo_pedrada
@@ -124,6 +126,12 @@ olha_player = function()
             return;
         }
         
+        if (!pode_rodar)
+        {
+            velh = 0
+            return;
+        }
+        
         ajusta_vel()
         
         var _player_x = obj_player.x
@@ -175,13 +183,15 @@ solta_pedra = function()
             return;
         }
         
+        if (minha_pedra == noone && pode_rodar)
+        {
+            minha_pedra = instance_create_layer(x, y + 30, layer, obj_pedra)
+            minha_pedra.minha_aranha = id
+        }
+        
         if (timer_pedrada > 0 && pode_rodar)
         {
-            if (minha_pedra == noone)
-            {
-                minha_pedra = instance_create_layer(x, y + 30, layer, obj_pedra)
-                minha_pedra.minha_aranha = id
-            }
+            
             
             
             timer_pedrada --
@@ -210,6 +220,7 @@ inverte_grav = function()
                 grav_invert = true
                 pode_rodar = false
                 grav = .2
+                velh = 0
             }
         }
     }

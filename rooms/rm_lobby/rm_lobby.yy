@@ -19,6 +19,7 @@
     {"name":"inst_6BB23763","path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"inst_15FB36E0","path":"rooms/rm_lobby/rm_lobby.yy",},
     {"name":"inst_2B889029","path":"rooms/rm_lobby/rm_lobby.yy",},
+    {"name":"inst_EE2AD9F","path":"rooms/rm_lobby/rm_lobby.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -57,6 +58,10 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_escolhe_level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"propertyId":{"name":"estrelas","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_escolhe_level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"propertyId":{"name":"level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"resource":{"name":"rm_level_2","path":"rooms/rm_level_2/rm_level_2.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_level_2",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":672.0,},
+        {"$GMRInstance":"v4","%Name":"inst_EE2AD9F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_EE2AD9F","objectId":{"name":"obj_escolhe_level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_escolhe_level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"propertyId":{"name":"level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"resource":{"name":"rm_level_3","path":"rooms/rm_level_3/rm_level_3.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_level_3",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_escolhe_level","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"propertyId":{"name":"estrelas","path":"objects/obj_escolhe_level/obj_escolhe_level.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":672.0,},
       ],"layers":[],"name":"Chao_fundo","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Plantas2","depth":1300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Plantas2","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Plantas","depth":1400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Plantas","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

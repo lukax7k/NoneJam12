@@ -7,6 +7,9 @@ tempo_destruir = range * game_get_speed(gamespeed_fps)
 
 destruir = false
 
+image_xscale = 1.2
+image_yscale = image_xscale
+
 troca_sprite = function(_sprite)
 {
     if (sprite_index != _sprite)

@@ -4,6 +4,7 @@ mundo_origem = !global.mundo_invertido
 if (!mundo_origem)
 {
     image_alpha = 0
+    minha_pedra = noone
 }
 else 
 {
@@ -32,7 +33,11 @@ if (global.pause || paralizado)
 else 
 {
     image_speed = 1
-    solta_pedra()
+    if (mundo_origem)
+    {
+        solta_pedra()
+    }
+    
     
 }
 

@@ -20,11 +20,21 @@ caindo = function()
                 obj_player.toma_dano()
                 instance_destroy()
             }
+            
             else 
             {
                 instance_destroy()	
             }
         }
+        else if (place_meeting(x, y, obj_esfera_magica))
+            {
+                var _esfera = instance_place(x, y, obj_esfera_magica)
+                if (_esfera != noone)
+                {
+                    _esfera.insta_destroi()
+                    instance_destroy()
+                }
+            }
     }
     else 
     {

@@ -1,4 +1,4 @@
-colisoes = [obj_player, obj_esfera_magica, obj_galho]
+colisoes = [obj_player, obj_galho, obj_pedra]
 
 checa_colisao = function()
 {
@@ -7,13 +7,6 @@ checa_colisao = function()
         var espinho = instance_create_layer(x, y + 10, "Espinhos", obj_espinho_b)
         
         espinho.largura = image_xscale
-        
-        var _esfera = instance_place(x, y, obj_esfera_magica)
-        
-        if (_esfera != noone)
-        {
-            _esfera.insta_destroi()
-        }
         
         instance_destroy()
     }

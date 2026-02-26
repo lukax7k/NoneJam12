@@ -12,7 +12,7 @@ atira_flecha = function()
         if (image_xscale == -1)
         {
             _flecha.dir = 180
-            _flecha.image_xscale = 180
+            _flecha.image_xscale = -1
         }
         
         timer_flecha = irandom_range(120, 150)

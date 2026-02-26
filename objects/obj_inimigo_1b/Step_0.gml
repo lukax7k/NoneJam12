@@ -8,7 +8,7 @@ if (!mundo_origem)
 else 
 {
     image_alpha = 1	
-    ficar_paralizado()
+    
 }
 
 if (speed < 0)
@@ -35,7 +35,3 @@ else
     
 }
 
-if (!global.pause)
-{
-    remove_paralizia()
-}

@@ -8,7 +8,7 @@ paralizado = false
 cooldown_paralizado = 180
 timer_paralizado = 0
 
-colisoes = [obj_chao]
+colisoes = [obj_chao, obj_inimigo_2b]
 
 velv = 0
 max_velv = 4
@@ -32,6 +32,9 @@ minha_pedra = noone
 
 tempo_voltar = 180
 timer_voltar = tempo_voltar
+
+buraco_esq = false
+buraco_dir = false
 
 checa_chao = function()
 {
@@ -175,13 +178,15 @@ solta_pedra = function()
             return;
         }
         
+        if (minha_pedra == noone)
+        {
+            minha_pedra = instance_create_layer(x, y + 30, layer, obj_pedra_b)
+            minha_pedra.minha_aranha = id
+        }
+        
         if (timer_pedrada > 0 && pode_rodar)
         {
-            if (minha_pedra == noone)
-            {
-                minha_pedra = instance_create_layer(x, y + 30, layer, obj_pedra_b)
-                minha_pedra.minha_aranha = id
-            }
+            
             
             
             timer_pedrada --
@@ -233,7 +238,7 @@ voltando_top = function()
             if (chao)
             {
                 
-                instance_create_layer(x, y, layer, obj_inimigo_2)
+                instance_create_layer(x, y, layer, obj_inimigo_2b)
                 instance_destroy()
             }
         }
