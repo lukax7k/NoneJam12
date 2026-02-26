@@ -1,5 +1,7 @@
 draw_self();
 
+var _azul_base = make_colour_rgb(97, 119, 255)
+
 if(!desenhar_texto) exit; 
 /*
 

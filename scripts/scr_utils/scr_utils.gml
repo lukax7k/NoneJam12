@@ -32,7 +32,7 @@ global.estrelinhas_col = [
 
 global.cristais_temp = 0
 
-global.cristais = 1000
+global.cristais = 0
 
 global.vida_player = 3
 

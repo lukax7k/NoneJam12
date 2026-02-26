@@ -7,9 +7,9 @@ global.magias_totais = [
 
 function usar_esfera_magica()
 {
-    var _dir = point_direction(obj_player.x, obj_player.y -10, mouse_x, mouse_y)
+    var _dir = point_direction(obj_player.x, obj_player.y -13, mouse_x, mouse_y)
     
-    var _esfera = instance_create_layer(obj_player.x, obj_player.y -10, "Magias", obj_esfera_magica)
+    var _esfera = instance_create_layer(obj_player.x, obj_player.y -13, "Magias", obj_esfera_magica)
 
     _esfera.dir = _dir
 }

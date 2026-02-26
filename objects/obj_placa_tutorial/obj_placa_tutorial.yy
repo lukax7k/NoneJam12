@@ -1,11 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_totem_1",
+  "%Name":"obj_placa_tutorial",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_totem_1",
+  "name":"obj_placa_tutorial",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -25,13 +27,15 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"texto","filters":[],"listItems":[],"multiselect":false,"name":"texto","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Texto padrao","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ph_pedestal_2",
-    "path":"sprites/spr_ph_pedestal_2/spr_ph_pedestal_2.yy",
+    "name":"spr_placa_tutorial",
+    "path":"sprites/spr_placa_tutorial/spr_placa_tutorial.yy",
   },
   "spriteMaskId":null,
   "visible":true,

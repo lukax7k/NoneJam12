@@ -14,7 +14,7 @@ down = 0;
 confirm = 0
 sair = 0
 
-valor_vida = 120
+valor_vida = 60
             
             
 
@@ -120,6 +120,7 @@ controla_menu_win = function()
                 {
                     var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
                     _transition.action = "end"
+                    global.ganhou = false
                 }
                 break;
             } 
@@ -163,6 +164,7 @@ controla_menu_win = function()
                 {
                     var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
                     _transition.action = "end"
+                    global.ganhou = false
                 }
                 break;
             } 

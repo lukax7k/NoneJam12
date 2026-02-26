@@ -4,5 +4,5 @@ if (global.mundo_invertido)
 }
 else 
 {
-    image_alpha = 0	
+    image_alpha = .3
 }

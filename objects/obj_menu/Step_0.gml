@@ -9,15 +9,15 @@ else
 
 if (global.vida_player == 4)
 {
-    valor_vida = 140
+    valor_vida = 70
 }
 if (global.vida_player == 5)
 {
-    valor_vida = 160
+    valor_vida = 80
 }
 if (global.vida_player == 6)
 {
-    valor_vida = 180
+    valor_vida = 90
 }
 if (global.vida_player >= 7)
 {

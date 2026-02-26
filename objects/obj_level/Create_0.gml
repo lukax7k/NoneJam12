@@ -27,7 +27,16 @@ passando_level = function()
 {
     if (global.segundo_artefato)
     {
-        fiz_minha_parte = true
-        global.ganhou = true
+        if (room != rm_tutorial)
+        {
+            fiz_minha_parte = true
+            global.ganhou = true
+        }
+        else 
+        {
+        	var _transition = instance_create_layer(0, 0, "Transition", obj_transition_menu)
+            _transition.action = "lobby"
+        }
+        
     }
 }

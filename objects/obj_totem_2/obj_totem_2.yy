@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ph_totem",
-    "path":"sprites/spr_ph_totem/spr_ph_totem.yy",
+    "name":"spr_ph_pedestal",
+    "path":"sprites/spr_ph_pedestal/spr_ph_pedestal.yy",
   },
   "spriteMaskId":null,
   "visible":true,
