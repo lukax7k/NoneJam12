@@ -180,7 +180,7 @@ controla_menu_lobby = function()
     {
         option --;
     }
-    if (down && option < 3)
+    if (down && option < 2)
     {
         option ++;
     }
@@ -196,12 +196,6 @@ controla_menu_lobby = function()
             break;
         
             case 2:
-            {
-                
-            }
-            break;
-        
-            case 3:
             {
                 game_end();
             }

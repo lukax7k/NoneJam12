@@ -11,37 +11,28 @@ if (menu_ativo)
             draw_set_valign(fa_center);
             draw_set_font(fnt_menu);
             
+            
+            
             if (option == 1)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 220, "Continuar");
+                draw_text(640, 280, "Continuar");
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 220, "Continuar");
+            	draw_text(640, 280, "Continuar");
             }
             
             if (option == 2)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 360, "Melhorias");
+                draw_text(640, 420, "Sair");
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 360, "Melhorias");
-            }
-            
-            if (option == 3)
-            {
-                draw_set_colour(_azul_base);
-                draw_text(640, 500, "Sair");
-                draw_set_colour(-1);
-            }
-            else 
-            {
-            	draw_text(640, 500, "Sair");
+            	draw_text(640, 420, "Sair");
             }
             
             
