@@ -7,21 +7,21 @@ else
 	in_lobby = false
 }
 
-if (global.vida_player == 4)
+if (global.vida_max == 4)
 {
     valor_vida = 70
 }
-if (global.vida_player == 5)
+if (global.vida_max == 5)
 {
     valor_vida = 80
 }
-if (global.vida_player == 6)
+if (global.vida_max == 6)
 {
     valor_vida = 90
 }
-if (global.vida_player >= 7)
+if (global.vida_max >= 7)
 {
-    global.vida_esgotada = true
+    global.vida_max = true
 }
 
 

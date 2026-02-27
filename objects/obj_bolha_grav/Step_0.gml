@@ -9,10 +9,21 @@ else
 {
     if (instance_exists(obj_player))
     {
-        image_xscale = 2
-        image_yscale = image_xscale
-        x = obj_player.x - 4 * obj_player.image_xscale
-        y = obj_player.y - 12
+        if (obj_player.estado != "escalando")
+        {
+            image_xscale = 2
+            image_yscale = image_xscale
+            x = obj_player.x - 2 * obj_player.x_scale
+            y = obj_player.y - 12 
+        }
+        else 
+        {
+        	image_xscale = 2
+            image_yscale = image_xscale
+            x = obj_player.x
+            y = obj_player.y - 12 
+        }
+        
     }
     else 
     {
@@ -23,7 +34,7 @@ else
 
 if (mouse_check_button(mb_left))
 {
-    depth = 199
+    depth = 198
 }
 else 
 {

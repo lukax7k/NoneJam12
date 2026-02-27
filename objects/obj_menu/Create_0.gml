@@ -226,7 +226,8 @@ controla_menu_loja = function()
                 if (global.cristais >= valor_vida && !global.vida_esgotada)
                 {
                     global.cristais -= valor_vida
-                    global.vida_player ++
+                    global.vida_max ++
+                    global.vida_player = global.vida_max
                     obj_player.vida = global.vida_player
                 }
                 

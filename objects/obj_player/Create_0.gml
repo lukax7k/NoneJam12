@@ -9,6 +9,9 @@ max_velh = 2
 max_velh_correndo = 5
 max_velh_aplicada = max_velh
 
+aceleracao = 0.8
+desaceleracao = 1
+
 grav = .4
 
 left = 0
@@ -153,6 +156,7 @@ escolhendo_magias = function()
     
     if (magias_player[magia_atual].nome == "Bolha Gravitacional")
     {
+        if (estado == "escalando") return;
         if (!instance_exists(obj_bolha_grav))
         {
             if (!global.mundo_invertido)
@@ -174,6 +178,7 @@ escolhendo_magias = function()
         }
         else 
         {
+            if (estado == "escalando") return;
             global.magias_totais[2].em_cooldown = false
         	if (usar_magia_atual)
             {
@@ -195,6 +200,7 @@ usando_magia = function()
     }
     else 
     {
+        if (estado == "escalando") return;
         global.magias_totais[0].em_cooldown = false
     	if (usar_magia_atual)
         {
@@ -366,6 +372,20 @@ correndo = function()
     }
 }
 
+approach = function(valor, alvo, passo)
+{
+    if (valor < alvo)
+    {
+        return min(valor + passo, alvo)
+    }
+    else if (valor > alvo)
+    {
+        return max(valor - passo, alvo)
+    }
+    
+    return valor
+}
+
 aplica_vel = function()
 {
     checa_chao()
@@ -373,7 +393,17 @@ aplica_vel = function()
     
     if (!tomando_ricochete)
     {
-       velh = (right - left) * max_velh_aplicada
+        var dir = right - left
+        var vel_alvo = dir * max_velh_aplicada
+        
+        if (dir != 0)
+        {
+            velh = approach(velh, vel_alvo, aceleracao)
+        }
+        else
+        {
+            velh = approach(velh, 0, desaceleracao)
+        }
     }
     
     if (!chao)
@@ -773,7 +803,7 @@ maquina_de_estados = function()
             
             if (_escada != noone)
             {
-              x = lerp(x, _escada.x, .08)  
+              x = lerp(x, _escada.x, .06)  
             }
             
             

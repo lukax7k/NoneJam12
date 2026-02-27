@@ -16,6 +16,9 @@ global.estrelinhas_col_temp = [
     {id: 6, pega: false},
     {id: 7, pega: false},
     {id: 8, pega: false},
+    {id: 9, pega: false},
+    {id: 10, pega: false},
+    {id: 11, pega: false},
 ]
 
 global.estrelinhas_col = [
@@ -28,13 +31,18 @@ global.estrelinhas_col = [
     {id: 6, pega: false},
     {id: 7, pega: false},
     {id: 8, pega: false},
+    {id: 9, pega: false},
+    {id: 10, pega: false},
+    {id: 11, pega: false},
 ]
 
 global.cristais_temp = 0
 
-global.cristais = 0
+global.cristais = 1000
 
-global.vida_player = 3
+global.vida_max = 3
+
+global.vida_player = global.vida_max
 
 global.vida_esgotada = false
 

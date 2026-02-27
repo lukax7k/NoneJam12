@@ -19,8 +19,6 @@
     {"name":"inst_67F867BA1_1","path":"rooms/rm_level_base/rm_level_base.yy",},
     {"name":"inst_11509F27_1","path":"rooms/rm_level_base/rm_level_base.yy",},
     {"name":"inst_6C814C3E1","path":"rooms/rm_level_base/rm_level_base.yy",},
-    {"name":"inst_D29A24B1","path":"rooms/rm_level_base/rm_level_base.yy",},
-    {"name":"inst_19A1CD6F1","path":"rooms/rm_level_base/rm_level_base.yy",},
     {"name":"inst_2772B1D5_1_1","path":"rooms/rm_level_base/rm_level_base.yy",},
     {"name":"inst_44700D6C1_1","path":"rooms/rm_level_base/rm_level_base.yy",},
     {"name":"inst_517286FD1_1","path":"rooms/rm_level_base/rm_level_base.yy",},
@@ -97,8 +95,6 @@
     {"$GMRInstanceLayer":"","%Name":"Plantas2","depth":1200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Plantas2","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Espinhos","depth":1300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_4ACA773A1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4ACA773A1","objectId":{"name":"obj_draw_icons","path":"objects/obj_draw_icons/obj_draw_icons.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":0.0,},
-        {"$GMRInstance":"v4","%Name":"inst_D29A24B1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_D29A24B1","objectId":{"name":"obj_armadilha_espinho","path":"objects/obj_armadilha_espinho/obj_armadilha_espinho.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":1.0,"x":3296.0,"y":1472.0,},
-        {"$GMRInstance":"v4","%Name":"inst_19A1CD6F1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19A1CD6F1","objectId":{"name":"obj_armadilha_espinho","path":"objects/obj_armadilha_espinho/obj_armadilha_espinho.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":1.0,"x":3104.0,"y":1472.0,},
       ],"layers":[],"name":"Espinhos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Plantas","depth":1400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_46283266_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_46283266_1_1","objectId":{"name":"obj_paralax","path":"objects/obj_paralax/obj_paralax.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":0.0,},
@@ -129,7 +125,7 @@
   },
   "sequenceId":null,
   "views":[
-    {"hborder":220,"hport":720,"hspeed":-1,"hview":288,"inherit":false,"objectId":null,"vborder":120,"visible":true,"vspeed":-1,"wport":1280,"wview":512,"xport":0,"xview":0,"yport":0,"yview":0,},
+    {"hborder":220,"hport":720,"hspeed":-1,"hview":315,"inherit":false,"objectId":null,"vborder":120,"visible":true,"vspeed":-1,"wport":1280,"wview":560,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},

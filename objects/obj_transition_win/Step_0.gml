@@ -133,7 +133,8 @@ switch (action)
                 
                 var _alvo = noone
                 
-                if (room == rm_level_1) _alvo = rm_level_2 
+                if (room == rm_level_0) _alvo = rm_level_1 
+                else if (room == rm_level_1) _alvo = rm_level_2 
                 else if (room == rm_level_2) _alvo = rm_level_3
                 
                 room_goto(_alvo)
