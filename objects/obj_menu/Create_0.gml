@@ -229,6 +229,7 @@ controla_menu_loja = function()
                     global.vida_max ++
                     global.vida_player = global.vida_max
                     obj_player.vida = global.vida_player
+                    salvar_jogo()
                 }
                 
             }
@@ -241,6 +242,7 @@ controla_menu_loja = function()
                     global.cristais -= 100
                     global.magias_totais[1].possui = true
                     global.grav_esgotada = true
+                    salvar_jogo()
                 }
             } 
             break;
@@ -252,6 +254,7 @@ controla_menu_loja = function()
                     global.cristais -= 100
                     global.magias_totais[2].possui = true
                     global.impulso_esgotada = true
+                    salvar_jogo()
                 }
             }
             break;
@@ -259,6 +262,7 @@ controla_menu_loja = function()
             case 4:
             {
                 global.loja = false
+                salvar_jogo()
             }
             break;
         } 
@@ -311,10 +315,12 @@ Abrir_menu = function()
 {
     if (global.pause)
     {
+        
         image_alpha = 1
     }
     else if (global.loja) 
     {
+        
     	image_alpha = 1
     }
     else if (global.morreu)
@@ -324,6 +330,7 @@ Abrir_menu = function()
     }
     else if (global.ganhou)
     {
+        
         image_alpha = 1
     }
     else 

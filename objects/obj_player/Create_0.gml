@@ -37,7 +37,7 @@ teto = false
 escada = false
 escada_topo = false
 
-vida = global.vida_player
+vida = global.vida_max
 
 timer_invencivel = 0
 tempo_invencivel = 90

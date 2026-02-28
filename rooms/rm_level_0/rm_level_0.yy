@@ -328,7 +328,6 @@
     {"name":"inst_10A93CF6","path":"rooms/rm_level_0/rm_level_0.yy",},
     {"name":"inst_119CE0A4","path":"rooms/rm_level_0/rm_level_0.yy",},
     {"name":"inst_31AED0E8","path":"rooms/rm_level_0/rm_level_0.yy",},
-    {"name":"inst_5710F984","path":"rooms/rm_level_0/rm_level_0.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -527,7 +526,6 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3136.0,"y":704.0,},
         {"$GMRInstance":"v4","%Name":"inst_119CE0A4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_119CE0A4","objectId":{"name":"obj_vida_extra","path":"objects/obj_vida_extra/obj_vida_extra.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4096.0,"y":896.0,},
         {"$GMRInstance":"v4","%Name":"inst_31AED0E8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_31AED0E8","objectId":{"name":"obj_vida_extra","path":"objects/obj_vida_extra/obj_vida_extra.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1952.0,"y":928.0,},
-        {"$GMRInstance":"v4","%Name":"inst_5710F984","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5710F984","objectId":{"name":"obj_vida_extra","path":"objects/obj_vida_extra/obj_vida_extra.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":1472.0,},
       ],"layers":[],"name":"Estrelas","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Magias","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Magias","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Vinhas","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

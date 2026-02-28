@@ -21,7 +21,7 @@ if (global.vida_max == 6)
 }
 if (global.vida_max >= 7)
 {
-    global.vida_max = true
+    global.vida_esgotada = true
 }
 
 

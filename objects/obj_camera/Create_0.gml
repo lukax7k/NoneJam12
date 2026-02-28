@@ -13,7 +13,15 @@ down = 0
 if (instance_exists(obj_player))
 {
     alvo = obj_player
+    
+    x = alvo.x
+    y = alvo.y 
+}
+else if (instance_exists(obj_controla_inicio))
+{
+    alvo = obj_controla_inicio
+    
+    x = alvo.x
+    y = alvo.y 
 }
 
-x = alvo.x
-y = alvo.y 

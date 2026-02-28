@@ -2,6 +2,7 @@ switch (action)
 {
 
     case "lobby":
+        
     {
         if (entrando)
         {
@@ -31,6 +32,29 @@ switch (action)
                 }
                 global.cristais_temp = 0
                 
+                if (global.cristais_temp != 0)
+                {
+                    global.cristais += global.cristais_temp
+                }
+                global.cristais_temp = 0
+                
+                if (room == rm_level_0)
+                {
+                    
+                    global.levels_liberados[1].liberado = true
+                } 
+                else if (room == rm_level_1) 
+                {
+                    
+                    global.levels_liberados[2].liberado = true 
+                }
+                else if (room == rm_level_2) 
+                {
+                    
+                    global.levels_liberados[3].liberado = true 
+                }
+                
+                salvar_jogo()
                 
                 room_goto(rm_lobby)
                 
@@ -81,6 +105,23 @@ switch (action)
                 }
                 global.cristais_temp = 0
                 
+                if (room == rm_level_0)
+                {
+                    
+                    global.levels_liberados[1].liberado = true
+                } 
+                else if (room == rm_level_1) 
+                {
+                    
+                    global.levels_liberados[2].liberado = true 
+                }
+                else if (room == rm_level_2) 
+                {
+                    
+                    global.levels_liberados[3].liberado = true 
+                }
+                
+                salvar_jogo()
                 
                 room_restart()
                 
@@ -133,9 +174,23 @@ switch (action)
                 
                 var _alvo = noone
                 
-                if (room == rm_level_0) _alvo = rm_level_1 
-                else if (room == rm_level_1) _alvo = rm_level_2 
-                else if (room == rm_level_2) _alvo = rm_level_3
+                if (room == rm_level_0)
+                {
+                    _alvo = rm_level_1
+                    global.levels_liberados[1].liberado = true
+                } 
+                else if (room == rm_level_1) 
+                {
+                    _alvo = rm_level_2
+                    global.levels_liberados[2].liberado = true 
+                }
+                else if (room == rm_level_2) 
+                {
+                    _alvo = rm_level_3
+                    global.levels_liberados[3].liberado = true 
+                }
+                
+                salvar_jogo()
                 
                 room_goto(_alvo)
                 
@@ -187,7 +242,7 @@ switch (action)
                 global.cristais_temp = 0
                 
                 
-                
+                salvar_jogo()
                 
                 entrando = false
                 

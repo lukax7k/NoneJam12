@@ -18,7 +18,7 @@ var _y = y - sprite_height/2
 
 
 
-var _txt = scribble(texto).starting_format("fnt_menu", c_white);
+var _txt = scribble(texto).starting_format("fnt_texto", c_white);
 
 _txt = _txt.scale(0.2);
 _txt = _txt.wrap(sprite_width - 10);

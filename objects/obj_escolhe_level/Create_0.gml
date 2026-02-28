@@ -2,9 +2,27 @@ image_speed = 0;
 
 entra_level = function()
 {
-    global.destino = level
-    instance_create_layer(0, 0, "Transition", obj_transition_lobby)
+    if (estou_disponivel)
+    {
+        global.destino = level
+        instance_create_layer(0, 0, "Transition", obj_transition_lobby)
+    }
     
+    
+}
+
+estou_disponivel = false
+
+checa_tranca = function()
+{
+    if (global.levels_liberados[estrelas].liberado == true)
+    {
+        estou_disponivel = true
+    }
+    else 
+    {
+        estou_disponivel = false	
+    }
 }
 
 abre_porta = function()
@@ -33,7 +51,6 @@ abre_porta = function()
             image_speed = 0;
         }
     }
-    
 }
 
 desenha_estrelas = function()

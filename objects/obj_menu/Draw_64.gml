@@ -57,12 +57,12 @@ if (menu_ativo)
                 if (option == 1)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 270, "Vida extra                       " + string(valor_vida));
+                    draw_text(640, 270, "Vida extra                   " + string(valor_vida));
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 270, "Vida extra                       "+ string(valor_vida));
+                	draw_text(640, 270, "Vida extra                   "+ string(valor_vida));
                 }
             }
             else 
@@ -70,13 +70,13 @@ if (menu_ativo)
                 if (option == 1)
                 {
                     draw_set_colour(c_gray);
-                    draw_text(640, 270, "Vida extra                       --");
+                    draw_text(640, 270, "Vida extra                   --");
                     draw_set_colour(-1);
                 }
                 else 
                 {
                 	draw_set_colour(_cinza_escuro);
-                    draw_text(640, 270, "Vida extra                       --");
+                    draw_text(640, 270, "Vida extra                   --");
                     draw_set_colour(-1);
                 }
             	
@@ -87,12 +87,12 @@ if (menu_ativo)
                 if (option == 2)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 350, "Feitiço de gravidade       100");
+                    draw_text(640, 350, "Feitiço de gravidade   100");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 350, "Feitiço de gravidade       100");
+                	draw_text(640, 350, "Feitiço de gravidade   100");
                 }
             }
             else 
@@ -100,13 +100,13 @@ if (menu_ativo)
                 if (option == 2)
                 {
                     draw_set_colour(c_gray);
-                    draw_text(640, 350, "Feitiço de gravidade       --");
+                    draw_text(640, 350, "Feitiço de gravidade   --");
                     draw_set_colour(-1);
                 }
                 else 
                 {
                     draw_set_colour(_cinza_escuro);
-                    draw_text(640, 350, "Feitiço de gravidade       --");
+                    draw_text(640, 350, "Feitiço de gravidade   --");
                     draw_set_colour(-1);
                 }
             	
@@ -117,12 +117,12 @@ if (menu_ativo)
                 if (option == 3)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 430, "Feitiço de avanço            100");
+                    draw_text(640, 430, "Feitiço de avanço        100");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 430, "Feitiço de avanço            100");
+                	draw_text(640, 430, "Feitiço de avanço        100");
                 }
             }
             else 
@@ -130,13 +130,13 @@ if (menu_ativo)
                 if (option == 3)
                 {
                     draw_set_colour(c_gray);
-                    draw_text(640, 430, "Feitiço de avanço            --");
+                    draw_text(640, 430, "Feitiço de avanço        --");
                     draw_set_colour(-1);
                 }
                 else 
                 {
                 	draw_set_colour(_cinza_escuro);
-                    draw_text(640, 430, "Feitiço de avanço            --");
+                    draw_text(640, 430, "Feitiço de avanço        --");
                     draw_set_colour(-1);
                 }
             	
