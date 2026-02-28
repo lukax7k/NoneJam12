@@ -39,6 +39,7 @@ if (ativo)
        if (mouse_check_button(mb_right))
         {
             girando = true
+            toca_som(snd_giro_cajado)
         }
         
         if (girando)

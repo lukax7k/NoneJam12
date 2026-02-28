@@ -1,5 +1,5 @@
 draw_self()
-if (estrelas != 999)
+if (estrelas != 9)
 {
     desenha_estrelas()
 }

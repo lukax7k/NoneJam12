@@ -16,6 +16,7 @@ global.morreu = false
 
 global.loja = false
 
+
 fiz_minha_parte = false
 
 if (!instance_exists(obj_menu))
@@ -39,4 +40,18 @@ passando_level = function()
         }
         
     }
+}
+
+if (room == rm_lobby || room == rm_tutorial) 
+{
+        
+        poe_musica(snd_lobby)
+    
+}
+else 
+{
+	
+        tira_musica()
+        poe_musica(snd_level)
+    
 }

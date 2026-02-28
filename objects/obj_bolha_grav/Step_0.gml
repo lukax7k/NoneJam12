@@ -45,6 +45,11 @@ if (global.mundo_invertido)
 {
     if (mouse_check_button(mb_left))
     {
+        if (!global.grav_bolha)
+        {
+           toca_som(snd_bolha) 
+        }
+        
         global.grav_bolha = true
     }
     else 

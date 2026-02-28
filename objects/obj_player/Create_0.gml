@@ -268,6 +268,7 @@ pega_artefato = function()
         // Se o jogador interagiu com o pedestal 1
         if (pedestal_1 && interagir)
         {
+            toca_som(snd_pega_estrela_1)
             global.artefato_1 = true;
         }
         
@@ -276,6 +277,7 @@ pega_artefato = function()
         {
             if (pedestal_2 && interagir)
             {
+                toca_som(snd_pega_estrela_2)
                 global.artefato_2 = true;
                 global.artefato_1 = false;
                 
@@ -285,6 +287,7 @@ pega_artefato = function()
         
         if (pedestal_2 && interagir)
         {
+            toca_som(snd_pega_estrela_1)
             global.artefato_2 = true;
         }
         
@@ -293,6 +296,7 @@ pega_artefato = function()
         {
             if (pedestal_1 && interagir)
             {
+                toca_som(snd_pega_estrela_2)
                 global.artefato_1 = true;
                 global.artefato_2 = false;
                 
@@ -304,12 +308,14 @@ pega_artefato = function()
     {
     	if (pedestal_1 && interagir && global.artefato_2 )
         {
+            toca_som(snd_nivel_completo)
             global.artefato_2 = false;
             global.segundo_artefato = true;
         }
         
         if (pedestal_2 && interagir && global.artefato_1 )
         {
+            toca_som(snd_nivel_completo)
             global.artefato_1 = false;
             global.segundo_artefato = true;
         }
@@ -440,6 +446,7 @@ aplica_vel = function()
         
         if (jump)
         {
+            toca_som(snd_jump)
             velv = -max_velv
             
         }
@@ -548,6 +555,8 @@ ricochete_dano = function()
 toma_dano = function(_dano = 1)
 {
     if (timer_invencivel > 0) return;
+        
+    toca_som(snd_dano)
     
     vida -= _dano
     ricochete_dano()
@@ -825,12 +834,13 @@ maquina_de_estados = function()
             
            if (dash_duration > 0)
            {
+            toca_som(snd_dash)
             if (global.mundo_invertido)
             {
                 x_scale = x_scale *1.2
                 y_scale = .8
              
-                velh = 12 * x_scale;
+                velh = 8 * x_scale;
                 velv = 0;
                 dash_duration --;
                 var _rastro = instance_create_layer(x, y, layer, obj_player_rastro)

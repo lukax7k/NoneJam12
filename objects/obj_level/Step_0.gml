@@ -16,3 +16,5 @@ if (!fiz_minha_parte)
 {
     passando_level()
 }
+
+show_debug_message(global.musica_atual)

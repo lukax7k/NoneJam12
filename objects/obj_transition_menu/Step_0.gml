@@ -6,6 +6,7 @@ switch (action)
         {
             global.in_transition = true
             img += img_vel
+            toca_som(snd_confirm_save)
         
             if (img - img_num > cols + 1)
             {
@@ -39,9 +40,12 @@ switch (action)
     {
         img += img_vel
         global.in_transition = true
+        toca_som(snd_exit_save)
+        
     
         if (img - img_num > cols + 1)
         {
+            
             
             room_goto(rm_lobby)
             global.estrelinhas_temp = 0

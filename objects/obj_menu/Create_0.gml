@@ -180,7 +180,7 @@ controla_menu_lobby = function()
     {
         option --;
     }
-    if (down && option < 2)
+    if (down && option < 3)
     {
         option ++;
     }
@@ -197,7 +197,17 @@ controla_menu_lobby = function()
         
             case 2:
             {
-                game_end();
+                var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                _transition.action = "main"
+                global.pause = false;
+            }
+            break;
+            case 3:
+            {
+                var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+                _transition.action = "end"
+                global.pause = false;
+                
             }
             break;
         } 
@@ -336,5 +346,13 @@ Abrir_menu = function()
     else 
     {
         image_alpha = 0
+    }
+}
+
+toca_barulhinho = function()
+{
+    if (up xor down)
+    {
+        audio_play_sound(snd_menu_select, 0, 0)
     }
 }

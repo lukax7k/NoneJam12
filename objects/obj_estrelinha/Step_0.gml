@@ -2,6 +2,7 @@
 
 if (coletada)
 {
+    toca_som(snd_estrelinha)
     indo_embora()
 }
 else 

@@ -41,6 +41,7 @@ fim_de_jogo = global.morreu;
 
 if (menu_ativo)
 {
+    toca_barulhinho()
     if (in_lobby)
     {
         if(!global.loja)
@@ -79,6 +80,7 @@ if (menu_ativo)
 }
 else if (fim_de_jogo)
 {
+    toca_barulhinho()
     pega_input();
     controla_menu_morto();
 }

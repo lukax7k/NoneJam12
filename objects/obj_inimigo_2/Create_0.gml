@@ -217,6 +217,7 @@ inverte_grav = function()
         {
             if (mouse_check_button(mb_left))
             {
+                toca_som(snd_bolha) 
                 grav_invert = true
                 pode_rodar = false
                 grav = .2

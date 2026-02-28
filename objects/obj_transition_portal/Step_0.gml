@@ -2,6 +2,7 @@ if (entrando)
 {
     global.in_transition = true
     img += img_vel
+    toca_som(snd_portal_in)
 
     if (img - img_num > cols + 1)
     {
@@ -16,11 +17,13 @@ if (entrando)
 else 
 {
     img -= img_vel
+    
    
     
     if (img < -5) 
     {
         global.in_transition = false
+        toca_som(snd_portal_out)
         instance_destroy()
     }
 }

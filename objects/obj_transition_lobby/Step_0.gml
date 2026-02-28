@@ -2,6 +2,7 @@ if (entrando)
 {
     img += img_vel
     global.in_transition = true
+    toca_som(snd_confirm_save)
 
     if (img - img_num > cols + 1)
     {

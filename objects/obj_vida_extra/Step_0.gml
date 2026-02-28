@@ -5,6 +5,7 @@ if (instance_exists(obj_player))
     {
         if (_player.vida < global.vida_max && !dei_vida)
         {
+            toca_som(snd_cura)
             _player.vida ++
             dei_vida = true
         }

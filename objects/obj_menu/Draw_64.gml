@@ -16,23 +16,34 @@ if (menu_ativo)
             if (option == 1)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 280, "Continuar");
+                draw_text_ext_transformed(640, 220, "Continuar", -1, -1, 1, 1, 0);
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 280, "Continuar");
+            	draw_text_ext_transformed(640, 220, "Continuar", -1, -1, 1, 1, 0);
             }
             
             if (option == 2)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 420, "Sair");
+                draw_text_ext_transformed(640, 360, "Ir ao menu", -1, -1, 1, 1, 0);
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 420, "Sair");
+            	draw_text_ext_transformed(640, 360, "Ir ao menu", -1, -1, 1, 1, 0);
+            }
+            
+            if (option == 3)
+            {
+                draw_set_colour(_azul_base);
+                draw_text_ext_transformed(640, 500, "Sair do jogo", -1, -1, 1, 1, 0);
+                draw_set_colour(-1);
+            }
+            else 
+            {
+            	draw_text_ext_transformed(640, 500, "Sair do jogo", -1, -1, 1, 1, 0);
             }
             
             
@@ -172,45 +183,45 @@ if (menu_ativo)
             if (option == 1)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 174, "Continuar");
+                draw_text(640, 220, "Continuar");
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 174, "Continuar");
+            	draw_text(640, 220, "Continuar");
             }
             
             if (option == 2)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 303, "Recomeçar");
+                draw_text(640, 313, "Recomeçar");
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 303, "Recomeçar");
+            	draw_text(640, 313, "Recomeçar");
             }
             
             if (option == 3)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 417, "Sair da fase");
+                draw_text(640, 406, "Sair da fase");
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 417, "Sair da fase");
+            	draw_text(640, 406, "Sair da fase");
             }
             
             if (option == 4)
             {
                 draw_set_colour(_azul_base);
-                draw_text(640, 546, "Sair do jogo");
+                draw_text(640, 500, "Sair do jogo");
                 draw_set_colour(-1);
             }
             else 
             {
-            	draw_text(640, 546, "Sair do jogo");
+            	draw_text(640, 500, "Sair do jogo");
             }
             
             
@@ -225,7 +236,7 @@ if (menu_ativo)
             draw_set_font(fnt_menu);
             
             
-            draw_text(640, 188, "Fase concluída!");
+            draw_text(640, 220, "Fase completa!");
             
             
             if (room != rm_level_3)
@@ -233,44 +244,44 @@ if (menu_ativo)
                 if (option == 1)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 313, "Próxima fase");
+                    draw_text(640, 311, "Próxima fase");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 313, "Próxima fase");
+                	draw_text(640, 311, "Próxima fase");
                 }
                 
                 if (option == 2)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 397, "Voltar para base");
+                    draw_text(640, 374, "Ir para base");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 397, "Voltar para base");
+                	draw_text(640, 374, "Ir para base");
                 }
                 
                 if (option == 3)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 481, "Jogar novamente");
+                    draw_text(640, 437, "Recomeçar");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 481, "Jogar novamente");
+                	draw_text(640, 437, "Recomeçar");
                 }
                 if (option == 4)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 565, "Sair do jogo");
+                    draw_text(640, 500, "Sair do jogo");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 565, "Sair do jogo");
+                	draw_text(640, 500, "Sair do jogo");
                 }
             }
             else 
@@ -279,33 +290,33 @@ if (menu_ativo)
                 if (option == 1)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 397, "Voltar para base");
+                    draw_text(640, 374, "ir para base");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 397, "Voltar para base");
+                	draw_text(640, 374, "ir para base");
                 }
                 
                 if (option == 2)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 481, "Jogar novamente");
+                    draw_text(640, 437, "Recomeçar");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 481, "Jogar novamente");
+                	draw_text(640, 437, "Recomeçar");
                 }
                 if (option == 3)
                 {
                     draw_set_colour(_azul_base);
-                    draw_text(640, 565, "Sair do jogo");
+                    draw_text(640, 500, "Sair do jogo");
                     draw_set_colour(-1);
                 }
                 else 
                 {
-                	draw_text(640, 565, "Sair do jogo");
+                	draw_text(640, 500, "Sair do jogo");
                 }
             }
                 
@@ -328,41 +339,41 @@ if (fim_de_jogo)
     draw_set_font(fnt_menu);
     
     
-    draw_text(640, 188, "Você perdeu");
+    draw_text(640, 220, "Você perdeu");
     
     
     
     if (option == 1)
         {
             draw_set_colour(_azul_base);
-            draw_text(640, 343, "Recomeçar");
+            draw_text(640, 374, "Recomeçar");
             draw_set_colour(-1);
         }
         else 
         {
-        	draw_text(640, 343, "Recomeçar");
+        	draw_text(640, 374, "Recomeçar");
         }
         
         if (option == 2)
         {
             draw_set_colour(_azul_base);
-            draw_text(640, 447, "Sair da fase");
+            draw_text(640, 437, "Sair da fase");
             draw_set_colour(-1);
         }
         else 
         {
-        	draw_text(640, 447, "Sair da fase");
+        	draw_text(640, 437, "Sair da fase");
         }
         
         if (option == 3)
         {
             draw_set_colour(_azul_base);
-            draw_text(640, 546, "Sair do jogo");
+            draw_text(640, 500, "Sair do jogo");
             draw_set_colour(-1);
         }
         else 
         {
-        	draw_text(640, 546, "Sair do jogo");
+        	draw_text(640, 500, "Sair do jogo");
         }
     
     

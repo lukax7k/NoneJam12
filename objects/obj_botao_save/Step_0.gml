@@ -26,7 +26,11 @@ if (confirm)
         else 
         {
             
+            
+            
         	file_delete("saveteste" + string(global.ativo) + ".json" )
+            
+            global.ativo = 0
             
             timer_deleta = tempo_deleta
         }
@@ -39,3 +43,11 @@ else
     timer_deleta = tempo_deleta	
 }
 
+if (global.ativo = save && !global.on_delete)
+{
+    image_index = 1
+}
+else 
+{
+	image_index = 0
+}
