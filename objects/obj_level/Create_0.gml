@@ -28,15 +28,20 @@ passando_level = function()
 {
     if (global.segundo_artefato)
     {
-        if (room != rm_tutorial)
+        if (room != rm_tutorial && room != rm_level_3)
         {
             fiz_minha_parte = true
             global.ganhou = true
         }
-        else 
+        else if (room == rm_tutorial) 
         {
         	var _transition = instance_create_layer(0, 0, "Transition", obj_transition_menu)
             _transition.action = "lobby"
+        }
+        else 
+        {
+        	var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+            _transition.action = "ending"
         }
         
     }
@@ -44,14 +49,9 @@ passando_level = function()
 
 if (room == rm_lobby || room == rm_tutorial) 
 {
-        
         poe_musica(snd_lobby)
-    
 }
 else 
 {
-	
-        tira_musica()
         poe_musica(snd_level)
-    
 }

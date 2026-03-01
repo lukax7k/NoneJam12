@@ -8,7 +8,7 @@ if (entrando)
     {
         if (room_exists(global.destino))
         {
-           room_goto(global.destino)
+           room_goto(rm_loading)
             
             entrando = false
         }

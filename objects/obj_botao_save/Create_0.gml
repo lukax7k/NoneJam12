@@ -74,7 +74,7 @@ global.estrelinhas_col = [
 
 global.cristais_temp = 0
 
-global.cristais = 1000
+global.cristais = 0
 
 global.vida_max = 3
 
@@ -114,11 +114,22 @@ global.magias_totais = [
 ]
 
         
-        carrega_jogo()
         
         
-        var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
-        _transition.action = "lobby"
+        if (file_exists("saveteste" + string(save) + ".json"))
+        {
+            var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+            _transition.action = "lobby"
+        
+            carrega_jogo()
+        }
+        else 
+        {
+        	var _transition = instance_create_layer(0, 0, "Transition", obj_transition_win)
+            _transition.action = "intro"
+        }
+        
+        
     }
 }
 

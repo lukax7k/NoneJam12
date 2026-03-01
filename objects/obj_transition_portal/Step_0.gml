@@ -8,6 +8,12 @@ if (entrando)
     {
         
            global.mundo_invertido = !global.mundo_invertido
+        
+            if (instance_exists(obj_part_level))
+            {
+                obj_part_level.troca_particula()
+            }
+            
             
             
             entrando = false

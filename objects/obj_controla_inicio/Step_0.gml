@@ -9,5 +9,3 @@ if (!global.trava_inicio)
     pega_input()
     controla_save()
 }
-
-show_debug_message(global.musica_atual)

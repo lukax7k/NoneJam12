@@ -4,10 +4,18 @@ entra_level = function()
 {
     if (estou_disponivel)
     {
-        global.destino = level
-        instance_create_layer(0, 0, "Transition", obj_transition_lobby)
+        if (estrelas == 9)
+        {
+            global.destino = level
+            instance_create_layer(0, 0, "Transition", obj_transition_level) 
+        }
+        else 
+        {
+        	global.destino = level
+            instance_create_layer(0, 0, "Transition", obj_transition_lobby)
+        }
+        
     }
-    
     
 }
 
