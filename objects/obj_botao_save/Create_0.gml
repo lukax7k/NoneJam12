@@ -74,7 +74,7 @@ global.estrelinhas_col = [
 
 global.cristais_temp = 0
 
-global.cristais = 1000
+global.cristais = 0
 
 global.vida_max = 3
 
@@ -95,7 +95,7 @@ global.levels_liberados = [
     { level: 0, liberado: true, concluido : false },
     { level: 1, liberado: false, concluido : false },
     { level: 2, liberado: false, concluido : false },
-    { level: 3, liberado: true, concluido : false },
+    { level: 3, liberado: false, concluido : false },
     { level: 4, liberado: false, concluido : false },
     { level: 5, liberado: false, concluido : false },
     { level: 6, liberado: false, concluido : false },
