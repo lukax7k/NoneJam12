@@ -28,7 +28,15 @@ caindo = function()
     }
     else 
     {
-        x = minha_aranha.x
-        y = minha_aranha.y + 30
+        if (instance_exists(minha_aranha))
+        {
+            x = minha_aranha.x
+            y = minha_aranha.y + 30
+        }
+        else 
+        {
+            instance_destroy()	
+        }
+        
     }
 }
